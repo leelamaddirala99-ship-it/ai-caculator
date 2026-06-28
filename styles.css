@@ -1,0 +1,252 @@
+:root {
+  --bg: #f8fafc;
+  --card: #fff;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --accent: #6366f1;
+  --accent-light: #e0e7ff;
+  --border: #e2e8f0;
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 50%, #fef8ff 100%);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --text-light: #cbd5e1;
+  --accent: #818cf8;
+  --accent-light: #3730a3;
+  --border: #334155;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #15213e 100%);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-gradient);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  padding: 28px;
+}
+
+.left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  width: 360px;
+}
+
+textarea#input {
+  width: 100%;
+  height: 150px;
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  resize: vertical;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+textarea#input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-light);
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  flex: 1;
+  min-width: 110px;
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 18px;
+  min-height: 50px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-light);
+}
+
+.card h3 {
+  margin: 0 0 14px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  padding: 8px 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+#result {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+#explanation {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#explanation ol {
+  margin: 0;
+  padding-left: 24px;
+  color: var(--text-light);
+}
+
+#explanation li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+#history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+#history li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+#history li:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+footer {
+  padding: 16px 28px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+button {
+  padding: 11px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] button {
+  background: linear-gradient(135deg, #818cf8, #a78bfa);
+}
+
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .right {
+    width: 100%;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .actions button {
+    min-width: auto;
+  }
+}
